@@ -133,6 +133,14 @@ function resetSelectAtkState() {
   player.atk2.state = 'nothing'
   player.atk3.state = 'nothing'
 }
+function noMana() {
+  playerHud.style.display = 'none'
+  showAtkText('com mana insuficiente', 1, 'player')
+  setTimeout(() => {
+    showAtkText('com mana insuficiente', 2, 'player')
+    showAtkSection()
+  }, 1000)
+}
 function attack(atkName) {
   let damage
   let mana
@@ -168,6 +176,7 @@ function attack(atkName) {
       playerStatsUpdate(hpPlayer, manaPlayer)
     }, 1000)
   } else {
+    noMana()
     console.log('no mana')
   }
 }
@@ -181,7 +190,11 @@ function showAtkText(atk, number, user) {
   } else if (user == 'player') {
     name = 'Voce'
   }
-  atkHudText.innerText = `${name} usou ${atk}`
+  if (atk != 'com mana insuficiente') {
+    atkHudText.innerText = `${name} usou ${atk}`
+  } else {
+    atkHudText.innerText = `${name} esta ${atk} pra usar essa habilidade`
+  }
   if (number == 1) {
     atkHud.style.display = 'initial'
   } else if (number == 2) {

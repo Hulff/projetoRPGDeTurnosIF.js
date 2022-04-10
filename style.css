@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: Roboto;
+  color: white;
+  z-index: 1;
+  position: fixed;
+  margin: 0px;
+}
+#win {
+  display: flex;
+  background: black;
+  margin: auto;
+  width: 100%;
+  position: fixed;
+  height: 100vh;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 > sub {
+  font-size: 1.8vh;
+}
+.bg {
+  background-image: url(./imgs/bg1.jpg);
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  position: fixed;
+  filter: brightness(0.5);
+}
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  margin: 3vh 35px 0px 35px;
+}
+header > div > div {
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: flex-start;
+}
+header > div > div > h5 {
+  padding: 0px;
+  margin: 0px 8px 0px 0px;
+  font-size: 3vh;
+}
+meter {
+  -webkit-appearance: meter;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.input-hp {
+  width: 22vh;
+  height: 4vh;
+  margin-bottom: 1.5vh;
+}
+.input-hp::before {
+  content: 'Hp';
+  position: absolute;
+  top: 0.5%;
+  left: unset;
+  font-size: 2.5vh;
+}
+.input-hp::-webkit-meter-optimum-value {
+  box-shadow: 0 5px 5px -5px #999 inset;
+  background-color: red;
+  -webkit-transition: width 2s;
+}
+.input-hp::-webkit-meter-bar {
+  border-radius: 2px;
+  background: none;
+  background-color: grey;
+  box-shadow: 0 5px 5px -5px #333 inset;
+}
+.input-mana {
+  width: 17vh;
+  height: 3vh;
+}
+.input-mana::before {
+  content: 'Mana';
+  position: absolute;
+  top: 6.5%;
+  font-size: 2.5vh;
+}
+
+.input-mana::-webkit-meter-optimum-value {
+  box-shadow: 0 5px 5px -5px #999 inset;
+  background-color: rgb(0, 16, 135);
+  -webkit-transition: width 2s;
+}
+.input-mana::-webkit-meter-bar {
+  background: none;
+  background-color: grey;
+  box-shadow: 0 5px 5px -5px #333 inset;
+  border-radius: 2px;
+}
+
+.div-battle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.div-battle > div {
+  width: 50%;
+}
+#atk-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.atk {
+  border-radius: 5px;
+  width: 12vh;
+  background: gray;
+  text-align: center;
+  padding: 5px 11px;
+  margin: 3px 1vh;
+  color: white;
+  cursor: pointer;
+  font-size: 2vh;
+}
+
+.atk:hover {
+  color: grey;
+  background: rgb(55, 55, 55);
+}
+#atk-desc {
+  border-radius: 5px;
+  height: 12vh;
+  width: 40%;
+  text-align: start;
+  padding: 1px 30px;
+  margin: 2px;
+  border-color: black;
+  border-style: solid;
+  border-width: thin;
+  background-color: #c7c0c0;
+}
+main {
+  height: 66vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: flex-end;
+  flex-direction: row;
+}
+main > div > div {
+  display: flex;
+  justify-content: center;
+}
+footer {
+  margin: 0px 20px;
+}
+h2 {
+  margin: 0px 2vh 0px 2vh;
+  align-self: baseline;
+  font-size: 3vh;
+}
+#div-atk-text {
+  display: flex;
+  border-radius: 5px;
+  height: 12vh;
+  width: 40%;
+  text-align: start;
+  padding: 1px 30px;
+  margin: auto;
+  border-color: black;
+  border-style: solid;
+  border-width: thin;
+  background-color: #c7c0c0;
+  align-items: center;
+  justify-content: center;
+}
+footer > div {
+  font-size: 2.4vh;
+  width: 100%;
+}
+footer > div > div {
+  width: 100%;
+}
+#mana-charge {
+  background: blue;
+}

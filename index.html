@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div
+      onClick="document.location.reload(true)"
+      id="win"
+      style="display: none"
+    >
+      <h1 style="visibility: hidden" id="win-textW">
+        You Win<sub id="">clique para continuar</sub>
+      </h1>
+      <h1 style="visibility: hidden" id="win-textL">
+        You Lose<sub id="">clique para continuar</sub>
+      </h1>
+    </div>
+    <div class="bg"></div>
+    <header>
+      <div id="div-player">
+        <div id="hp-player">
+          <meter min="0" id="hpBarP" class="input-hp">100%</meter>
+        </div>
+        <div id="mana-player">
+          <meter min="0" id="manaBarP" class="input-mana">100%</meter>
+        </div>
+      </div>
+      <h2 id="turnText">Turno:</h2>
+      <div id="div-bot">
+        <div id="hp-bot">
+          <meter min="0" id="hpBarBot" id="hpBarE" class="input-hp">100%</meter>
+        </div>
+        <div id="mana-bot">
+          <meter
+            id="manaBarBot"
+            min="0"
+            id="manaBarE"
+            class="input-mana"
+          ></meter>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="div-battle">
+        <div id="img-player">
+          <img src="./imgs/60256d441a6e36c.jpg" />
+        </div>
+        <div id="img-bot">
+          <img src="./imgs/60256d441a6e36c.jpg" />
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div id="atk-section" style="visibility: visible; display: initial">
+        <div id="atk-list">
+          <div
+            id="atk1"
+            class="atk"
+            onclick="atkSelect(player.atk1.atkDesc, atk1, player.atk1, 'atk1')"
+          ></div>
+          <div
+            id="atk2"
+            class="atk"
+            onclick="atkSelect(player.atk1.atkDesc, atk1, player.atk1, 'atk2') "
+          ></div>
+          <div
+            id="atk3"
+            class="atk"
+            onclick="atkSelect(player.atk1.atkDesc, atk1, player.atk1, 'atk3')"
+          ></div>
+          <div
+            id="mana-charge"
+            class="atk"
+            onclick="atkSelect(player.manaRegen.desc,manaCharge,player.manaRegen,'mana')"
+          >
+            Mana Charge
+          </div>
+        </div>
+        <div id="atk-desc">
+          <p id="pDesc"></p>
+        </div>
+      </div>
+      <div id="atk-text-section" style="display: none; visibility: visible">
+        <div id="div-atk-text">
+          <p id="div-atk-text-p"></p>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="./app.js"></script>
+</html>

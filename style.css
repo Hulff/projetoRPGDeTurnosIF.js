@@ -47,6 +47,10 @@ header {
   font-weight: 700;
   margin: 3vh 35px 0px 35px;
 }
+#img-player {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
 header > div > div {
   margin-bottom: 12px;
   display: flex;

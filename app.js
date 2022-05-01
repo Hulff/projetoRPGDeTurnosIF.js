@@ -3,7 +3,14 @@ if (window.innerWidth > 981) {
   console.log('changing width')
   imgBot.style.height = '43vh'
 }
-
+const sprite =
+  'https://lh3.googleusercontent.com/46ZhizA8jfHdfFk3VtMwjXjIww6gN0nb3AmmAadKgjGGQ_N-YFQtHLDVHZWDGQhzcom8XMvC4u0dTNPymNplcjMGLRkrxwtTJj_8dXkfJCp14cLxh_qEpb-jHZO-FhifHJZMFG6C9N_HrqPc0LXnzPRzNuRmny_d9_W6zVqnZs53ZVvakSDdOkuwn6HtdIMk38vWn14uvlLzD3P2C65VvmT4GK6c5wtzyybRR0aaywAg5rO2vp1ML3BRsdVRz7cZoaPkrV-fkcjCKayvs2DKvigQfffJy8WaBFsdJByz-FcV8zQ1D0dyIDCjVUpCfOZSTWNgu30Xxr4PrUsxNTRdajYjABhFN6ACnRszyJCKNHXE-SsgRCC5q9_d9aLg-ZvyWTT8gs3CnE3IV2AlurMi5KfRGhh7UnryDcjr8wvRnOpw7EErIfg_stlE8fWDRRFxKJhdlnU_buunmRPBGbkJWOUJvwafPb4mVe-Mpehn1Wg5kMqRDHeb-erEaGZdBT66VGDVQglQtexrReq4UOB3LJUxoSNInGxQnU1_kva3Q_E6szAQjFRd01pDK3Z_tfVqACPm6sFOq7f5ws-RfxBZMTlx-74Yk66Ajqe5A5csYUl4y0FsImvmqFemGhnQqtXZHFrKH_wyq2-rh4beF52GxLObTzm8m3qypFKcrGbnEbKtq6O5shunlTOrQBozFYTBdhwKU2A_AWJYafJI0h_a8OIGHrJvo6ERrerqKjvbNBz4b7_1Z6dUt7xuUOApk6sZ9N_u4h0DCp5zE-FEhZ_ymS2JpAm0a87k=s657-no?authuser=0'
+const sprite1 =
+  'https://lh3.googleusercontent.com/pw/AM-JKLXGZgqRN9-M9Mf8mMwMiBgd336oSRBHGmJsedljxKdKkgtA5iS_z3X87o31tPlaF0DtWTh5QMbGQEcnFJpQ2rFsVmWQ126QjT8b4Z9yi-w6MXjVqhbiWzrqdkxXm6mdq8lxgcPPjbSXl1UrnNYhjtU_=s600-no?authuser=0'
+const sprite2 =
+  'https://lh3.googleusercontent.com/pw/AM-JKLXGZgqRN9-M9Mf8mMwMiBgd336oSRBHGmJsedljxKdKkgtA5iS_z3X87o31tPlaF0DtWTh5QMbGQEcnFJpQ2rFsVmWQ126QjT8b4Z9yi-w6MXjVqhbiWzrqdkxXm6mdq8lxgcPPjbSXl1UrnNYhjtU_=s600-no?authuser=0'
+const sprite3 =
+  'https://lh3.googleusercontent.com/pw/AM-JKLUpcBRBPVcNe18WKH1Tu60x4yMPXjx7LlYyl261kgsLUs_fPrOAvddXlXyEsQLiYRVy835A9dWuL7Z3InGZSL2p3RKBMSX4jmFYkuROQcBiQtYa_VPBlCFw12BWmifOB-eS1SJFT_LU-gA6gWOq3Tzv=w667-h600-no?authuser=0'
 const hpBar = document.getElementById('hpBarP')
 const manaBar = document.getElementById('manaBarP')
 const hpBarBot = document.getElementById('hpBarBot')
@@ -59,35 +66,36 @@ player = {
 bot = {
   manaRegen: {
     name: 'mana regen',
-    value: 50,
+    value: 15,
     desc: 'regeneracao de mana',
     state: 'nothing'
   },
   atk1: {
-    atkName: 'tiro rapido',
-    atkDesc: 'rapido disparo com a pistola',
+    atkName: 'lança sombria',
+    atkDesc:
+      'O agratti junta dois de seus tentáculos a uma forma solida de trevas que ele produz para formar uma lança e atacar com ela',
     state: 'nothing',
-    damage: 10,
+    damage: 5,
     manaCost: 0
   },
   atk2: {
-    atkName: 'tiro lento',
-    atkDesc: 'rapido disparo com a pistola , mas com chance de crítico',
+    atkName: 'Destruição mental',
+    atkDesc: '  O agratti olha nos olhos de seu inimigo ',
     state: 'nothing',
-    damage: 30,
+    damage: 12,
     manaCost: 20
   },
   atk3: {
-    atkName: 'tiro explosivo',
+    atkName: ' Abalo dimensional',
     atkDesc: ' disparo com a pistola explosivo',
     state: 'nothing',
-    damage: 40,
-    manaCost: 40
+    damage: 25,
+    manaCost: 30
   },
-  name: 'soldier',
+  name: 'Agratti',
   stats: {
-    hp: 100,
-    mana: 50
+    hp: 50,
+    mana: 40
   }
 }
 function win() {
@@ -215,11 +223,13 @@ function showAtk(atk) {
     botTurn()
   }, 2000)
 }
-function showAtkBot(atk) {
+function showAtkBot(atk, a) {
   playerHud.style.display = 'none'
   showAtkText(atk, 1, 'bot')
+  changeSpriteBot(1, a)
   setTimeout(() => {
     showAtkText(atk, 2, 'bot')
+    changeSpriteBot(2)
     showAtkSection()
   }, 2000)
 }
@@ -228,18 +238,22 @@ function botAttack(atkName) {
   let damage
   let mana
   let atkUsed
+  let atkSprite
   if (atkName == 1) {
     damage = bot.atk1.damage
     mana = bot.atk1.manaCost
     atkUsed = bot.atk1.atkName
+    atkSprite = 'atk1'
   } else if (atkName == 2) {
     damage = bot.atk2.damage
     mana = bot.atk2.manaCost
     atkUsed = bot.atk2.atkName
+    atkSprite = 'atk2'
   } else if (atkName == 3) {
     damage = bot.atk3.damage
     mana = bot.atk3.manaCost
     atkUsed = bot.atk3.atkName
+    atkSprite = 'atk3'
   } else if (atkName == 4) {
     damage = 0
     mana = -player.manaRegen.value
@@ -254,11 +268,11 @@ function botAttack(atkName) {
   if (mana < manaBot) {
     hpPlayer = hpPlayer - damage
     manaBot = manaBot - mana
-    showAtkBot(atkUsed, 1)
+    showAtkBot(atkUsed, atkSprite)
     setTimeout(() => {
       botStatsUpdate(hpbot, manaBot)
       playerStatsUpdate(hpPlayer, manaPlayer)
-    }, 1000)
+    }, 500)
   } else {
     console.log('no mana')
     botAttack(4)
@@ -305,12 +319,19 @@ function botTurn() {
     hideHud(2)
   }, 1500)
 }
-function changeSpriteBot(atk) {
-  if (atk == 'atk1') {
-    imgBot.src =
-      'file:///C:/Users/filial/Desktop/projetoRPGDeTurnosIF.js/imgs/Agratti.png'
-  } else if (atk == 'atk2') {
-  } else if (atk == 'atk3') {
+function changeSpriteBot(state, atk) {
+  if (state == 1) {
+    console.log('change sprite')
+    if (atk == 'atk1') {
+      imgBot.src = sprite1
+    } else if (atk == 'atk2') {
+      imgBot.src = sprite2
+    } else if (atk == 'atk3') {
+      imgBot.src = sprite3
+    }
+  } else {
+    console.log('change to normal')
+    imgBot.src = sprite
   }
 }
 

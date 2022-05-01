@@ -1,3 +1,9 @@
+const imgBot = document.getElementById('imgBot')
+if (window.innerWidth > 981) {
+  console.log('changing width')
+  imgBot.style.height = '43vh'
+}
+
 const hpBar = document.getElementById('hpBarP')
 const manaBar = document.getElementById('manaBarP')
 const hpBarBot = document.getElementById('hpBarBot')
@@ -298,6 +304,14 @@ function botTurn() {
     botSelectAttack()
     hideHud(2)
   }, 1500)
+}
+function changeSpriteBot(atk) {
+  if (atk == 'atk1') {
+    imgBot.src =
+      'file:///C:/Users/filial/Desktop/projetoRPGDeTurnosIF.js/imgs/Agratti.png'
+  } else if (atk == 'atk2') {
+  } else if (atk == 'atk3') {
+  }
 }
 
 atksUpdate(player.atk1.atkName, player.atk2.atkName, player.atk3.atkName)

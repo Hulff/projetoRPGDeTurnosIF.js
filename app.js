@@ -1,16 +1,17 @@
 const imgBot = document.getElementById('imgBot')
 if (window.innerWidth > 981) {
   console.log('changing width')
-  imgBot.style.height = '43vh'
+  imgBot.style.height = '50vh'
 }
 const sprite =
-  'https://lh3.googleusercontent.com/46ZhizA8jfHdfFk3VtMwjXjIww6gN0nb3AmmAadKgjGGQ_N-YFQtHLDVHZWDGQhzcom8XMvC4u0dTNPymNplcjMGLRkrxwtTJj_8dXkfJCp14cLxh_qEpb-jHZO-FhifHJZMFG6C9N_HrqPc0LXnzPRzNuRmny_d9_W6zVqnZs53ZVvakSDdOkuwn6HtdIMk38vWn14uvlLzD3P2C65VvmT4GK6c5wtzyybRR0aaywAg5rO2vp1ML3BRsdVRz7cZoaPkrV-fkcjCKayvs2DKvigQfffJy8WaBFsdJByz-FcV8zQ1D0dyIDCjVUpCfOZSTWNgu30Xxr4PrUsxNTRdajYjABhFN6ACnRszyJCKNHXE-SsgRCC5q9_d9aLg-ZvyWTT8gs3CnE3IV2AlurMi5KfRGhh7UnryDcjr8wvRnOpw7EErIfg_stlE8fWDRRFxKJhdlnU_buunmRPBGbkJWOUJvwafPb4mVe-Mpehn1Wg5kMqRDHeb-erEaGZdBT66VGDVQglQtexrReq4UOB3LJUxoSNInGxQnU1_kva3Q_E6szAQjFRd01pDK3Z_tfVqACPm6sFOq7f5ws-RfxBZMTlx-74Yk66Ajqe5A5csYUl4y0FsImvmqFemGhnQqtXZHFrKH_wyq2-rh4beF52GxLObTzm8m3qypFKcrGbnEbKtq6O5shunlTOrQBozFYTBdhwKU2A_AWJYafJI0h_a8OIGHrJvo6ERrerqKjvbNBz4b7_1Z6dUt7xuUOApk6sZ9N_u4h0DCp5zE-FEhZ_ymS2JpAm0a87k=s657-no?authuser=0'
+  'https://lh3.googleusercontent.com/pw/AM-JKLWDpOhPuiV7rA7j4JAmQMe4EzrqGiausseNY2fZJcxaJz-dhDUyBK-NJigEfM8uUinFySYaKVZe6C25m0ZNMZl0IlYU9gqSJ6PQClaQgtUArR4Kjg8WOHDDxZQt-vBnnOVm0wAp9L9Rta2ZFmsiUqan=s657-no?authuser=0'
 const sprite1 =
-  'https://lh3.googleusercontent.com/pw/AM-JKLXGZgqRN9-M9Mf8mMwMiBgd336oSRBHGmJsedljxKdKkgtA5iS_z3X87o31tPlaF0DtWTh5QMbGQEcnFJpQ2rFsVmWQ126QjT8b4Z9yi-w6MXjVqhbiWzrqdkxXm6mdq8lxgcPPjbSXl1UrnNYhjtU_=s600-no?authuser=0'
+  'https://lh3.googleusercontent.com/pw/AM-JKLWmiXIZz8r01gHyVdJBOLPMVGXUTLiXSo79i4W14zlRsiG0xXTguUdOqdf49qBLKm_K3ouyZcbkidywFMPtxn1Sd6-bpRkMp2RyHAd0Bbnz_EObvDd64rn-1pcWlwjOMSmTpMSxlcE418MgnOCPpQt0=s657-no?authuser=0'
 const sprite2 =
-  'https://lh3.googleusercontent.com/pw/AM-JKLXGZgqRN9-M9Mf8mMwMiBgd336oSRBHGmJsedljxKdKkgtA5iS_z3X87o31tPlaF0DtWTh5QMbGQEcnFJpQ2rFsVmWQ126QjT8b4Z9yi-w6MXjVqhbiWzrqdkxXm6mdq8lxgcPPjbSXl1UrnNYhjtU_=s600-no?authuser=0'
+  'https://lh3.googleusercontent.com/pw/AM-JKLX_qX1L1EyuoAukuxiQx3gVVlk6pDOBdBKPxLrP_2EgIp6vYd9i7VYI99kKbmzg1-vKVARlTP6RvZ-YiaJLdgFFJZHMAX9df_YmtObRTiygJw8cf-G_hhKOBFOV4MVPlV2lmfp5s8F25_pzekiQZl6n=s657-no?authuser=0'
 const sprite3 =
-  'https://lh3.googleusercontent.com/pw/AM-JKLUpcBRBPVcNe18WKH1Tu60x4yMPXjx7LlYyl261kgsLUs_fPrOAvddXlXyEsQLiYRVy835A9dWuL7Z3InGZSL2p3RKBMSX4jmFYkuROQcBiQtYa_VPBlCFw12BWmifOB-eS1SJFT_LU-gA6gWOq3Tzv=w667-h600-no?authuser=0'
+  'https://lh3.googleusercontent.com/pw/AM-JKLWmiXIZz8r01gHyVdJBOLPMVGXUTLiXSo79i4W14zlRsiG0xXTguUdOqdf49qBLKm_K3ouyZcbkidywFMPtxn1Sd6-bpRkMp2RyHAd0Bbnz_EObvDd64rn-1pcWlwjOMSmTpMSxlcE418MgnOCPpQt0=s657-no?authuser=0'
+
 const hpBar = document.getElementById('hpBarP')
 const manaBar = document.getElementById('manaBarP')
 const hpBarBot = document.getElementById('hpBarBot')

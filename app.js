@@ -1,7 +1,9 @@
 const imgBot = document.getElementById('imgBot')
+const atkDesc = document.getElementById('atk-desc')
 if (window.innerWidth > 981) {
   console.log('changing width')
   imgBot.style.height = '50vh'
+  atkDesc.style.width = '40%'
 }
 const sprite =
   'https://lh3.googleusercontent.com/pw/AM-JKLWDpOhPuiV7rA7j4JAmQMe4EzrqGiausseNY2fZJcxaJz-dhDUyBK-NJigEfM8uUinFySYaKVZe6C25m0ZNMZl0IlYU9gqSJ6PQClaQgtUArR4Kjg8WOHDDxZQt-vBnnOVm0wAp9L9Rta2ZFmsiUqan=s657-no?authuser=0'

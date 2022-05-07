@@ -8,9 +8,9 @@ const sprite =
 const sprite1 =
   'https://lh3.googleusercontent.com/pw/AM-JKLWmiXIZz8r01gHyVdJBOLPMVGXUTLiXSo79i4W14zlRsiG0xXTguUdOqdf49qBLKm_K3ouyZcbkidywFMPtxn1Sd6-bpRkMp2RyHAd0Bbnz_EObvDd64rn-1pcWlwjOMSmTpMSxlcE418MgnOCPpQt0=s657-no?authuser=0'
 const sprite2 =
-  'https://lh3.googleusercontent.com/pw/AM-JKLX_qX1L1EyuoAukuxiQx3gVVlk6pDOBdBKPxLrP_2EgIp6vYd9i7VYI99kKbmzg1-vKVARlTP6RvZ-YiaJLdgFFJZHMAX9df_YmtObRTiygJw8cf-G_hhKOBFOV4MVPlV2lmfp5s8F25_pzekiQZl6n=s657-no?authuser=0'
+  'https://lh3.googleusercontent.com/pw/AM-JKLUcwK8Zsb9PH1_wZjGL6PCvPEF4Bmvzzy5gtknfolM1mSyPO823mRdVbqS4ZoMIcVkYPMPMJr0f0n1i5amAaboXIAw8nxkialgGnaVJBp7yrtGI1k8TBzRfKKJZ3vByveKYkax-4aMyzAJNyR4B2r7U=s657-no?authuser=0'
 const sprite3 =
-  'https://lh3.googleusercontent.com/pw/AM-JKLWmiXIZz8r01gHyVdJBOLPMVGXUTLiXSo79i4W14zlRsiG0xXTguUdOqdf49qBLKm_K3ouyZcbkidywFMPtxn1Sd6-bpRkMp2RyHAd0Bbnz_EObvDd64rn-1pcWlwjOMSmTpMSxlcE418MgnOCPpQt0=s657-no?authuser=0'
+  'https://lh3.googleusercontent.com/pw/AM-JKLUSoTHll9ReLPxCioudyOnrtz90dIU3zlDhuWnMESdFwC4o_72quyeAp3DOLzHks67kVDh7hHo5chKlQ121wy0WIUuAh9kagYdp2JGmhiMgDyzNXhrvf-RbmJHmx9DaDSl94sgQJcKkiBLP1MYdcmXt=s657-no?authuser=0'
 
 const hpBar = document.getElementById('hpBarP')
 const manaBar = document.getElementById('manaBarP')
@@ -96,7 +96,7 @@ bot = {
   name: 'Agratti',
   stats: {
     hp: 50,
-    mana: 40
+    mana: 70
   }
 }
 function win() {

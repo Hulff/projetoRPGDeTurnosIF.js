@@ -1,8 +1,10 @@
 const imgBot = document.getElementById('imgBot')
+const imgPlayer = document.getElementById('img-player')
 const atkDesc = document.getElementById('atk-desc')
 if (window.innerWidth > 981) {
   console.log('changing width')
   imgBot.style.height = '50vh'
+  imgPlayer.style.height = '54vh'
   atkDesc.style.width = '40%'
 }
 const sprite =
@@ -55,7 +57,7 @@ player = {
   },
   atk3: {
     atkName: 'tiro explosivo',
-    atkDesc: ' disparo com a pistola explosivo',
+    atkDesc: ' disparo com a pistola explosivo ',
     state: 'nothing',
     damage: 40,
     manaCost: 40
@@ -144,11 +146,14 @@ function resetSelectAtk() {
   atk1.style.border = 'none'
   atk2.style.border = 'none'
   atk3.style.border = 'none'
+  manaCharge.style.border = 'none'
 }
 function resetSelectAtkState() {
   player.atk1.state = 'nothing'
   player.atk2.state = 'nothing'
   player.atk3.state = 'nothing'
+  player.manaRegen.state = 'nothing'
+  resetSelectAtk()
 }
 function noMana() {
   playerHud.style.display = 'none'
@@ -233,8 +238,9 @@ function showAtkBot(atk, a) {
   setTimeout(() => {
     showAtkText(atk, 2, 'bot')
     changeSpriteBot(2)
+    turnAtualize()
     showAtkSection()
-  }, 2000)
+  }, 2400)
 }
 
 function botAttack(atkName) {
@@ -282,17 +288,26 @@ function botAttack(atkName) {
   }
 }
 function atkSelect(atkType, atkDiv, playerAtk, atkName) {
-  atkDescription.innerText = atkType
-
-  resetSelectAtk()
-
-  atkDiv.style.border = 'solid'
-  atkDiv.style.borderColor = 'wheat'
+  if (atkName != 'mana') {
+    atkDescription.innerHTML =
+      playerAtk.atkDesc +
+      '<br>' +
+      ' dano: ' +
+      playerAtk.damage +
+      '<br>' +
+      ' custo de mana: ' +
+      playerAtk.manaCost
+  } else {
+    atkDescription.innerHTML =
+      atkType + '<br>' + ' quantidade regenerada: ' + playerAtk.value
+  }
 
   if (playerAtk.state == 'nothing') {
     console.log('selecting')
     resetSelectAtkState()
     playerAtk.state = 'selected'
+    atkDiv.style.border = 'solid'
+    atkDiv.style.borderColor = 'wheat'
   } else {
     console.log('attacking')
     attack(atkName)
@@ -315,7 +330,6 @@ function hideHud(param) {
   }
 }
 function botTurn() {
-  turnAtualize()
   hideHud(1)
   setTimeout(() => {
     botSelectAttack()

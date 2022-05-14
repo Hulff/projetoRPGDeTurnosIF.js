@@ -20,6 +20,7 @@
     </div>
     <div class="bg"></div>
     <header>
+      <h2 id="turnText">Turno:</h2>
       <div id="div-player">
         <div id="hp-player">
           <meter min="0" id="hpBarP" class="input-hp">100%</meter>
@@ -28,7 +29,7 @@
           <meter min="0" id="manaBarP" class="input-mana">100%</meter>
         </div>
       </div>
-      <h2 id="turnText">Turno:</h2>
+
       <div id="div-bot">
         <div id="hp-bot">
           <meter min="0" id="hpBarBot" id="hpBarE" class="input-hp">100%</meter>
@@ -45,7 +46,7 @@
     </header>
     <main>
       <div class="div-battle">
-        <div id="img-player">
+        <div id="img-player" style="height: 34vh">
           <img src="./imgs/60256d441a6e36c.jpg" />
         </div>
         <div id="img-bot">
@@ -68,12 +69,12 @@
           <div
             id="atk2"
             class="atk"
-            onclick="atkSelect(player.atk1.atkDesc, atk1, player.atk1, 'atk2') "
+            onclick="atkSelect(player.atk2.atkDesc, atk2, player.atk2, 'atk2') "
           ></div>
           <div
             id="atk3"
             class="atk"
-            onclick="atkSelect(player.atk1.atkDesc, atk1, player.atk1, 'atk3')"
+            onclick="atkSelect(player.atk3.atkDesc, atk3, player.atk3, 'atk3')"
           ></div>
           <div
             id="mana-charge"

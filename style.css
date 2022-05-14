@@ -28,8 +28,14 @@ h1 {
 h1 > sub {
   font-size: 1.8vh;
 }
+h2 {
+  width: 100%;
+  margin: 0px 2vh 0px 2vh;
+  align-self: baseline;
+  font-size: 3vh;
+}
 .bg {
-  background-image: url(./imgs/bg3.jpg);
+  background-image: url(./imgs/bg1.jpg);
   width: 100%;
   height: 100vh;
   background-position: center;
@@ -40,15 +46,17 @@ h1 > sub {
   filter: brightness(0.5);
 }
 header {
+  height: 20vh;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-around;
   font-weight: 700;
   margin: 3vh 35px 0px 35px;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: space-between;
 }
 #img-player {
-  -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
 header > div > div {
@@ -74,7 +82,7 @@ meter {
 .input-hp::before {
   content: 'Hp';
   position: absolute;
-  top: 0.5%;
+  top: 8.5vh;
   left: unset;
   font-size: 2.5vh;
 }
@@ -96,7 +104,7 @@ meter {
 .input-mana::before {
   content: 'Mana';
   position: absolute;
-  top: 6.5%;
+  top: 15.9vh;
   font-size: 2.5vh;
 }
 
@@ -113,13 +121,12 @@ meter {
 }
 
 .div-battle {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  align-content: flex-start;
   align-items: center;
-}
-.div-battle > div {
-  width: 50%;
+  justify-content: space-around;
 }
 #atk-list {
   display: flex;
@@ -131,14 +138,13 @@ meter {
 }
 .atk {
   border-radius: 5px;
-  width: 12vh;
   background: gray;
   text-align: center;
   padding: 5px 11px;
-  margin: 3px 1vh;
+  margin: 8px 1vh;
   color: white;
   cursor: pointer;
-  font-size: 1.7vh;
+  font-size: 2vh;
 }
 
 .atk:hover {
@@ -148,7 +154,6 @@ meter {
 #atk-desc {
   border-radius: 5px;
   height: 12vh;
-  width: 40%;
   text-align: start;
   padding: 1px 30px;
   margin: 2px;
@@ -157,8 +162,14 @@ meter {
   border-width: thin;
   background-color: #c7c0c0;
 }
+#atk-desc > p {
+  height: 74%;
+  width: 100%;
+  font-size: 2vh;
+}
+
 main {
-  height: 66vh;
+  height: 57vh;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -170,13 +181,9 @@ main > div > div {
   justify-content: center;
 }
 footer {
-  margin: 0px 20px;
+  height: 20vh;
 }
-h2 {
-  margin: 0px 2vh 0px 2vh;
-  align-self: baseline;
-  font-size: 3vh;
-}
+
 #div-atk-text {
   display: flex;
   border-radius: 5px;

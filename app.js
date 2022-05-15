@@ -7,6 +7,7 @@ if (window.innerWidth > 981) {
   imgPlayer.style.height = '54vh'
   atkDesc.style.width = '40%'
 }
+// Bot
 const sprite =
   'https://lh3.googleusercontent.com/pw/AM-JKLWDpOhPuiV7rA7j4JAmQMe4EzrqGiausseNY2fZJcxaJz-dhDUyBK-NJigEfM8uUinFySYaKVZe6C25m0ZNMZl0IlYU9gqSJ6PQClaQgtUArR4Kjg8WOHDDxZQt-vBnnOVm0wAp9L9Rta2ZFmsiUqan=s657-no?authuser=0'
 const sprite1 =
@@ -15,6 +16,10 @@ const sprite2 =
   'https://lh3.googleusercontent.com/pw/AM-JKLUcwK8Zsb9PH1_wZjGL6PCvPEF4Bmvzzy5gtknfolM1mSyPO823mRdVbqS4ZoMIcVkYPMPMJr0f0n1i5amAaboXIAw8nxkialgGnaVJBp7yrtGI1k8TBzRfKKJZ3vByveKYkax-4aMyzAJNyR4B2r7U=s657-no?authuser=0'
 const sprite3 =
   'https://lh3.googleusercontent.com/pw/AM-JKLUSoTHll9ReLPxCioudyOnrtz90dIU3zlDhuWnMESdFwC4o_72quyeAp3DOLzHks67kVDh7hHo5chKlQ121wy0WIUuAh9kagYdp2JGmhiMgDyzNXhrvf-RbmJHmx9DaDSl94sgQJcKkiBLP1MYdcmXt=s657-no?authuser=0'
+
+const tackle = document.getElementById('tackle-atk')
+const mind = document.getElementById('mind-atk')
+const distortion = document.getElementById('distortion-atk')
 
 const hpBar = document.getElementById('hpBarP')
 const manaBar = document.getElementById('manaBarP')
@@ -81,21 +86,24 @@ bot = {
       'O agratti junta dois de seus tentáculos a uma forma solida de trevas que ele produz para formar uma lança e atacar com ela',
     state: 'nothing',
     damage: 5,
-    manaCost: 0
+    manaCost: 0,
+    soundSfx: tackle
   },
   atk2: {
     atkName: 'Destruição mental',
     atkDesc: '  O agratti olha nos olhos de seu inimigo ',
     state: 'nothing',
     damage: 12,
-    manaCost: 20
+    manaCost: 20,
+    soundSfx: mind
   },
   atk3: {
     atkName: ' Abalo dimensional',
     atkDesc: ' disparo com a pistola explosivo',
     state: 'nothing',
     damage: 25,
-    manaCost: 30
+    manaCost: 30,
+    soundSfx: distortion
   },
   name: 'Agratti',
   stats: {
@@ -231,13 +239,15 @@ function showAtk(atk) {
     botTurn()
   }, 2000)
 }
-function showAtkBot(atk, a) {
+function showAtkBot(atkText, a, atk) {
   playerHud.style.display = 'none'
-  showAtkText(atk, 1, 'bot')
+  showAtkText(atkText, 1, 'bot')
   changeSpriteBot(1, a)
+  playSfx(atk)
   setTimeout(() => {
-    showAtkText(atk, 2, 'bot')
+    showAtkText(atkText, 2, 'bot')
     changeSpriteBot(2)
+    stopSfx(atk)
     turnAtualize()
     showAtkSection()
   }, 2400)
@@ -248,21 +258,25 @@ function botAttack(atkName) {
   let mana
   let atkUsed
   let atkSprite
+  let botAtk
   if (atkName == 1) {
     damage = bot.atk1.damage
     mana = bot.atk1.manaCost
     atkUsed = bot.atk1.atkName
     atkSprite = 'atk1'
+    botAtk = bot.atk1.soundSfx
   } else if (atkName == 2) {
     damage = bot.atk2.damage
     mana = bot.atk2.manaCost
     atkUsed = bot.atk2.atkName
     atkSprite = 'atk2'
+    botAtk = bot.atk2.soundSfx
   } else if (atkName == 3) {
     damage = bot.atk3.damage
     mana = bot.atk3.manaCost
     atkUsed = bot.atk3.atkName
     atkSprite = 'atk3'
+    botAtk = bot.atk3.soundSfx
   } else if (atkName == 4) {
     damage = 0
     mana = -player.manaRegen.value
@@ -277,7 +291,7 @@ function botAttack(atkName) {
   if (mana < manaBot) {
     hpPlayer = hpPlayer - damage
     manaBot = manaBot - mana
-    showAtkBot(atkUsed, atkSprite)
+    showAtkBot(atkUsed, atkSprite, botAtk)
     setTimeout(() => {
       botStatsUpdate(hpbot, manaBot)
       playerStatsUpdate(hpPlayer, manaPlayer)
@@ -350,6 +364,12 @@ function changeSpriteBot(state, atk) {
     console.log('change to normal')
     imgBot.src = sprite
   }
+}
+function playSfx(useratk) {
+  useratk.play()
+}
+function stopSfx(useratk) {
+  useratk.pause()
 }
 
 atksUpdate(player.atk1.atkName, player.atk2.atkName, player.atk3.atkName)

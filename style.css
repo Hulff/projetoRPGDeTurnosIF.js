@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
-  width: 100%;
-  height: 100vh;
+  width: 99%;
+  height: 98vh;
   font-family: Roboto;
   color: white;
   z-index: 1;

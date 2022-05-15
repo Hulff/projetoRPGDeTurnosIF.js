@@ -75,8 +75,8 @@ meter {
   border-radius: 3px;
 }
 .input-hp {
-  width: 22vh;
-  height: 4vh;
+  width: 32vh;
+  height: 4.5vh;
   margin-bottom: 1.5vh;
 }
 .input-hp::before {
@@ -98,8 +98,8 @@ meter {
   box-shadow: 0 5px 5px -5px #333 inset;
 }
 .input-mana {
-  width: 17vh;
-  height: 3vh;
+  width: 19vh;
+  height: 3.4vh;
 }
 .input-mana::before {
   content: 'Mana';
@@ -129,22 +129,20 @@ meter {
   justify-content: space-around;
 }
 #atk-list {
+  margin-right: 15px;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
   align-content: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-direction: column;
 }
 .atk {
   border-radius: 5px;
   background: gray;
   text-align: center;
   padding: 5px 11px;
-  margin: 8px 1vh;
+  margin: 0.5vh 2vh;
   color: white;
   cursor: pointer;
-  font-size: 2vh;
+  font-size: 2.4vh;
 }
 
 .atk:hover {
@@ -169,7 +167,7 @@ meter {
 }
 
 main {
-  height: 57vh;
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -181,7 +179,7 @@ main > div > div {
   justify-content: center;
 }
 footer {
-  height: 20vh;
+  height: 26vh;
 }
 
 #div-atk-text {
@@ -208,4 +206,9 @@ footer > div > div {
 }
 #mana-charge {
   background: blue;
+}
+#atk-style {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

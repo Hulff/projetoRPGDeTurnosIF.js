@@ -245,11 +245,17 @@ function showAtkBot(atkText, a, atk) {
   playerHud.style.display = 'none'
   showAtkText(atkText, 1, 'bot')
   changeSpriteBot(1, a)
-  playSfx(atk)
+  if (atk == 'mana') {
+  } else {
+    playSfx(atk)
+  }
   setTimeout(() => {
     showAtkText(atkText, 2, 'bot')
     changeSpriteBot(2)
-    stopSfx(atk)
+    if (atk == 'mana') {
+    } else {
+      stopSfx(atk)
+    }
     turnAtualize()
     showAtkSection()
   }, 2400)
@@ -284,6 +290,7 @@ function botAttack(atkName) {
     mana = -player.manaRegen.value
     atkUsed = player.manaRegen.name
     atkSprite = 'mana'
+    botAtk = 'mana'
   }
 
   let hpbot = hpBarBot.value

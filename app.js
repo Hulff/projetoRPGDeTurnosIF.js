@@ -9,13 +9,15 @@ if (window.innerWidth > 981) {
 }
 // Bot
 const sprite =
-  'https://lh3.googleusercontent.com/pw/AM-JKLWDpOhPuiV7rA7j4JAmQMe4EzrqGiausseNY2fZJcxaJz-dhDUyBK-NJigEfM8uUinFySYaKVZe6C25m0ZNMZl0IlYU9gqSJ6PQClaQgtUArR4Kjg8WOHDDxZQt-vBnnOVm0wAp9L9Rta2ZFmsiUqan=s657-no?authuser=0'
+  'https://lh3.googleusercontent.com/pw/AM-JKLWYGADNiuvQbELnReegKLhksDAXI33PDmnuS7c-fr-qmQbC9Z0NtmHHviMU9hnJdu_SprmnmLmqLZxkwf7yZBCcK1JYdkLlFe336BAC_ojpZK0BBcMX3qDeutHjrrefK06V6Za8HHMZUeR02lh25fii=s625-no?authuser=0'
 const sprite1 =
-  'https://lh3.googleusercontent.com/pw/AM-JKLWmiXIZz8r01gHyVdJBOLPMVGXUTLiXSo79i4W14zlRsiG0xXTguUdOqdf49qBLKm_K3ouyZcbkidywFMPtxn1Sd6-bpRkMp2RyHAd0Bbnz_EObvDd64rn-1pcWlwjOMSmTpMSxlcE418MgnOCPpQt0=s657-no?authuser=0'
+  'https://lh3.googleusercontent.com/pw/AM-JKLVM6KjuGUAuFA_71WBxHJHsajGy2WpmwtuCIVfywbfUzED6-YTHcUoxJ3WX-G5UE26KWAxK21RPHgexiThCAHeWH7gVKcGVXjCrTjjqIVc1O3WgL1rGOqeLhXKeViUsE5vzlHv_CZJC1SVoIIpcOH4p=s625-no?authuser=0'
 const sprite2 =
-  'https://lh3.googleusercontent.com/pw/AM-JKLUcwK8Zsb9PH1_wZjGL6PCvPEF4Bmvzzy5gtknfolM1mSyPO823mRdVbqS4ZoMIcVkYPMPMJr0f0n1i5amAaboXIAw8nxkialgGnaVJBp7yrtGI1k8TBzRfKKJZ3vByveKYkax-4aMyzAJNyR4B2r7U=s657-no?authuser=0'
+  'https://lh3.googleusercontent.com/pw/AM-JKLVAY9dmohWMP5pjuDIVxnS12YSgaWbC5Vs75POZ9MV1DVTqPq9llFMCarZ0cGh0LAZ-VnRs0fceHoCH3a8NjDbfaE1FsjEChe9DevxZd86t8JN78VmLqE-v6QBF4WnuyydqkgnnjvF2B2VAPxzw7dED=s625-no?authuser=0'
 const sprite3 =
-  'https://lh3.googleusercontent.com/pw/AM-JKLUSoTHll9ReLPxCioudyOnrtz90dIU3zlDhuWnMESdFwC4o_72quyeAp3DOLzHks67kVDh7hHo5chKlQ121wy0WIUuAh9kagYdp2JGmhiMgDyzNXhrvf-RbmJHmx9DaDSl94sgQJcKkiBLP1MYdcmXt=s657-no?authuser=0'
+  'https://lh3.googleusercontent.com/pw/AM-JKLVgHCg6x0gr9OO9VlyT_Jij5EvJNuD1m7KyFsgDb2yLhxau7zsbV0dFrvOzyFwBXRYRjn4-yV7vk8Xjg5AnCcRF-aezLTyfOZR_rSQVXIv-FZTTaKhR8VaTOnMP78daaeJaZhZdrL0N_kFVrUX3hp65=s625-no?authuser=0'
+const sprite4 =
+  'https://lh3.googleusercontent.com/pw/AM-JKLXVbuucJKl2VG6QvCgn395ATv61zGAkTQlryIYnT0hr-z35qzki6FYB4Iacx_8bIf1e-6360hE_Z0NziLpuo72AsZiJrV16L7oY7w0o5Ehfm_Th-_bIJhuVGCw_XvY2_5_z9_UKjMisI7fXRxo8XQEh=s625-no?authuser=0'
 
 const tackle = document.getElementById('tackle-atk')
 const mind = document.getElementById('mind-atk')
@@ -281,6 +283,7 @@ function botAttack(atkName) {
     damage = 0
     mana = -player.manaRegen.value
     atkUsed = player.manaRegen.name
+    atkSprite = 'mana'
   }
 
   let hpbot = hpBarBot.value
@@ -359,6 +362,8 @@ function changeSpriteBot(state, atk) {
       imgBot.src = sprite2
     } else if (atk == 'atk3') {
       imgBot.src = sprite3
+    } else if (atk == 'mana') {
+      imgBot.src = sprite4
     }
   } else {
     console.log('change to normal')

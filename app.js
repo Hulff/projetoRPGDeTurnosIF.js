@@ -242,10 +242,12 @@ function showAtkText(atk, number, user) {
 function showAtk(atk) {
   playerHud.style.display = 'none'
   showAtkText(atk, 1, 'player')
-  changeSpriteBot(1, 'takeDamage')
+  if (atk != 'mana regen') {
+    changeSpriteBot(1, 'takeDamage')
+  }
   setTimeout(() => {
     showAtkText(atk, 2, 'player')
-    changeSpriteBot(2, 'takeDamage')
+    changeSpriteBot(2)
     botTurn()
   }, 2000)
 }

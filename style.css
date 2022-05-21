@@ -2,7 +2,7 @@
 
 body {
   width: 99%;
-  height: 98vh;
+  height: 106vh;
   font-family: Roboto;
   color: white;
   z-index: 1;
@@ -96,6 +96,7 @@ meter {
   box-shadow: 0 5px 5px -5px #999 inset;
   background-color: red;
   -webkit-transition: width 2s;
+  transition: width 2s;
 }
 .input-hp::-webkit-meter-bar {
   border-radius: 2px;
@@ -118,6 +119,7 @@ meter {
   box-shadow: 0 5px 5px -5px #999 inset;
   background-color: rgb(0, 16, 135);
   -webkit-transition: width 2s;
+  transition: width 2s;
 }
 .input-mana::-webkit-meter-bar {
   background: none;

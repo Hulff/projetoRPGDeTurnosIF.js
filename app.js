@@ -1,27 +1,6 @@
 const imgBot = document.getElementById('imgBot')
 const imgPlayer = document.getElementById('img-player')
 const atkDesc = document.getElementById('atk-desc')
-if (window.innerWidth > 981) {
-  console.log('changing width')
-  imgBot.style.height = '50vh'
-  imgPlayer.style.height = '54vh'
-  atkDesc.style.width = '40%'
-}
-// Bot
-const sprite =
-  'https://lh3.googleusercontent.com/pw/AM-JKLWYGADNiuvQbELnReegKLhksDAXI33PDmnuS7c-fr-qmQbC9Z0NtmHHviMU9hnJdu_SprmnmLmqLZxkwf7yZBCcK1JYdkLlFe336BAC_ojpZK0BBcMX3qDeutHjrrefK06V6Za8HHMZUeR02lh25fii=s625-no?authuser=0'
-const sprite1 =
-  'https://lh3.googleusercontent.com/pw/AM-JKLVM6KjuGUAuFA_71WBxHJHsajGy2WpmwtuCIVfywbfUzED6-YTHcUoxJ3WX-G5UE26KWAxK21RPHgexiThCAHeWH7gVKcGVXjCrTjjqIVc1O3WgL1rGOqeLhXKeViUsE5vzlHv_CZJC1SVoIIpcOH4p=s625-no?authuser=0'
-const sprite2 =
-  'https://lh3.googleusercontent.com/pw/AM-JKLVAY9dmohWMP5pjuDIVxnS12YSgaWbC5Vs75POZ9MV1DVTqPq9llFMCarZ0cGh0LAZ-VnRs0fceHoCH3a8NjDbfaE1FsjEChe9DevxZd86t8JN78VmLqE-v6QBF4WnuyydqkgnnjvF2B2VAPxzw7dED=s625-no?authuser=0'
-const sprite3 =
-  'https://lh3.googleusercontent.com/pw/AM-JKLVgHCg6x0gr9OO9VlyT_Jij5EvJNuD1m7KyFsgDb2yLhxau7zsbV0dFrvOzyFwBXRYRjn4-yV7vk8Xjg5AnCcRF-aezLTyfOZR_rSQVXIv-FZTTaKhR8VaTOnMP78daaeJaZhZdrL0N_kFVrUX3hp65=s625-no?authuser=0'
-const sprite4 =
-  'https://lh3.googleusercontent.com/pw/AM-JKLXVbuucJKl2VG6QvCgn395ATv61zGAkTQlryIYnT0hr-z35qzki6FYB4Iacx_8bIf1e-6360hE_Z0NziLpuo72AsZiJrV16L7oY7w0o5Ehfm_Th-_bIJhuVGCw_XvY2_5_z9_UKjMisI7fXRxo8XQEh=s625-no?authuser=0'
-
-const tackle = document.getElementById('tackle-atk')
-const mind = document.getElementById('mind-atk')
-const distortion = document.getElementById('distortion-atk')
 
 const hpBar = document.getElementById('hpBarP')
 const manaBar = document.getElementById('manaBarP')
@@ -40,6 +19,33 @@ const atkHudText = document.getElementById('div-atk-text-p')
 const winScene = document.getElementById('win')
 const winText = document.getElementById('win-textW')
 const LoseText = document.getElementById('win-textL')
+
+if (window.innerWidth > 981) {
+  console.log('changing width')
+  imgBot.style.height = '50vh'
+  imgPlayer.style.height = '54vh'
+  atkDesc.style.width = '40%'
+  hpBarBot.style.width = '30vh'
+  hpBar.style.width = '30vh'
+}
+// Bot
+const sprite =
+  'https://lh3.googleusercontent.com/pw/AM-JKLWYGADNiuvQbELnReegKLhksDAXI33PDmnuS7c-fr-qmQbC9Z0NtmHHviMU9hnJdu_SprmnmLmqLZxkwf7yZBCcK1JYdkLlFe336BAC_ojpZK0BBcMX3qDeutHjrrefK06V6Za8HHMZUeR02lh25fii=s625-no?authuser=0'
+const sprite1 =
+  'https://lh3.googleusercontent.com/pw/AM-JKLVM6KjuGUAuFA_71WBxHJHsajGy2WpmwtuCIVfywbfUzED6-YTHcUoxJ3WX-G5UE26KWAxK21RPHgexiThCAHeWH7gVKcGVXjCrTjjqIVc1O3WgL1rGOqeLhXKeViUsE5vzlHv_CZJC1SVoIIpcOH4p=s625-no?authuser=0'
+const sprite2 =
+  'https://lh3.googleusercontent.com/pw/AM-JKLVAY9dmohWMP5pjuDIVxnS12YSgaWbC5Vs75POZ9MV1DVTqPq9llFMCarZ0cGh0LAZ-VnRs0fceHoCH3a8NjDbfaE1FsjEChe9DevxZd86t8JN78VmLqE-v6QBF4WnuyydqkgnnjvF2B2VAPxzw7dED=s625-no?authuser=0'
+const sprite3 =
+  'https://lh3.googleusercontent.com/pw/AM-JKLVgHCg6x0gr9OO9VlyT_Jij5EvJNuD1m7KyFsgDb2yLhxau7zsbV0dFrvOzyFwBXRYRjn4-yV7vk8Xjg5AnCcRF-aezLTyfOZR_rSQVXIv-FZTTaKhR8VaTOnMP78daaeJaZhZdrL0N_kFVrUX3hp65=s625-no?authuser=0'
+const sprite4 =
+  'https://lh3.googleusercontent.com/pw/AM-JKLXVbuucJKl2VG6QvCgn395ATv61zGAkTQlryIYnT0hr-z35qzki6FYB4Iacx_8bIf1e-6360hE_Z0NziLpuo72AsZiJrV16L7oY7w0o5Ehfm_Th-_bIJhuVGCw_XvY2_5_z9_UKjMisI7fXRxo8XQEh=s625-no?authuser=0'
+const sprite5 =
+  'https://lh3.googleusercontent.com/pw/AM-JKLUVvrxBqF2W_Z7riwnQxpYJ2TMp77N2kzpGv7NvDL9kOfaPktS36bJGa_PUT8Wio9wqOhofuNBAkQTrHBrr82RSpWNCP1kn6CreTe9ZoF3COij1lt2mmlfGxieuDjKwLhucLzF60IBrvkKQO-4-DnYX=s625-no?authuser=0'
+
+const tackle = document.getElementById('tackle-atk')
+const mind = document.getElementById('mind-atk')
+const distortion = document.getElementById('distortion-atk')
+
 let turno = 0
 player = {
   manaRegen: {
@@ -236,8 +242,10 @@ function showAtkText(atk, number, user) {
 function showAtk(atk) {
   playerHud.style.display = 'none'
   showAtkText(atk, 1, 'player')
+  changeSpriteBot(1, 'takeDamage')
   setTimeout(() => {
     showAtkText(atk, 2, 'player')
+    changeSpriteBot(2, 'takeDamage')
     botTurn()
   }, 2000)
 }
@@ -371,6 +379,8 @@ function changeSpriteBot(state, atk) {
       imgBot.src = sprite3
     } else if (atk == 'mana') {
       imgBot.src = sprite4
+    } else if (atk == 'takeDamage') {
+      imgBot.src = sprite5
     }
   } else {
     console.log('change to normal')

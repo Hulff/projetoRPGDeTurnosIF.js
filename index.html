@@ -30,26 +30,37 @@
     <div class="bg"></div>
     <header>
       <h2 id="turnText">Turno:</h2>
-      <div id="div-player">
-        <div id="hp-player">
-          <meter min="0" id="hpBarP" class="input-hp">100%</meter>
+      <div class="div-hud">
+        <div id="div-player">
+          <div id="hp-player">
+            <meter style="width: 21vh" min="0" id="hpBarP" class="input-hp">
+              100%
+            </meter>
+          </div>
+          <div id="mana-player">
+            <meter min="0" id="manaBarP" class="input-mana">100%</meter>
+          </div>
         </div>
-        <div id="mana-player">
-          <meter min="0" id="manaBarP" class="input-mana">100%</meter>
-        </div>
-      </div>
-
-      <div id="div-bot">
-        <div id="hp-bot">
-          <meter min="0" id="hpBarBot" id="hpBarE" class="input-hp">100%</meter>
-        </div>
-        <div id="mana-bot">
-          <meter
-            id="manaBarBot"
-            min="0"
-            id="manaBarE"
-            class="input-mana"
-          ></meter>
+        <div id="div-bot">
+          <div id="hp-bot">
+            <meter
+              style="width: 21vh"
+              min="0"
+              id="hpBarBot"
+              id="hpBarE"
+              class="input-hp"
+            >
+              100%
+            </meter>
+          </div>
+          <div id="mana-bot">
+            <meter
+              id="manaBarBot"
+              min="0"
+              id="manaBarE"
+              class="input-mana"
+            ></meter>
+          </div>
         </div>
       </div>
     </header>

@@ -143,6 +143,7 @@ meter {
   flex-direction: column;
 }
 .atk {
+  position: relative;
   border-radius: 5px;
   background: gray;
   text-align: center;
@@ -151,6 +152,7 @@ meter {
   color: white;
   cursor: pointer;
   font-size: 2.4vh;
+  transition: top 0.8s;
 }
 
 .atk:hover {

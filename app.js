@@ -220,6 +220,10 @@ function attack(atkName) {
 }
 function showAtkSection() {
   playerHud.style.display = 'initial'
+  atkSelect(player.atk1.atkDesc, atk1, player.atk1, 'atk1')
+  setTimeout(() => {
+    moveDown()
+  }, 100)
 }
 function showAtkText(atk, number, user) {
   let name
@@ -240,16 +244,20 @@ function showAtkText(atk, number, user) {
   }
 }
 function showAtk(atk) {
-  playerHud.style.display = 'none'
-  showAtkText(atk, 1, 'player')
-  if (atk != 'mana regen') {
-    changeSpriteBot(1, 'takeDamage')
-  }
+  moveUp()
+  resetSelectAtkState()
   setTimeout(() => {
-    showAtkText(atk, 2, 'player')
-    changeSpriteBot(2)
-    botTurn()
-  }, 2000)
+    playerHud.style.display = 'none'
+    showAtkText(atk, 1, 'player')
+    if (atk != 'mana regen') {
+      changeSpriteBot(1, 'takeDamage')
+    }
+    setTimeout(() => {
+      showAtkText(atk, 2, 'player')
+      changeSpriteBot(2)
+      botTurn()
+    }, 2000)
+  }, 1000)
 }
 function showAtkBot(atkText, a, atk) {
   playerHud.style.display = 'none'
@@ -394,6 +402,16 @@ function playSfx(useratk) {
 }
 function stopSfx(useratk) {
   useratk.pause()
+}
+function moveUp() {
+  atk2.style.top = '-35px'
+  atk3.style.top = '-71px'
+  manaCharge.style.top = '-107px'
+}
+function moveDown() {
+  atk2.style.top = '0px'
+  atk3.style.top = '0px'
+  manaCharge.style.top = '0px'
 }
 
 atksUpdate(player.atk1.atkName, player.atk2.atkName, player.atk3.atkName)

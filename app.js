@@ -11,6 +11,7 @@ const atk1 = document.getElementById('atk1')
 const atk2 = document.getElementById('atk2')
 const atk3 = document.getElementById('atk3')
 const manaCharge = document.getElementById('mana-charge')
+
 const atkDescription = document.getElementById('pDesc')
 const atkDescDiv = document.getElementById('atkDesc')
 const playerHud = document.getElementById('atk-section')
@@ -19,6 +20,10 @@ const atkHudText = document.getElementById('div-atk-text-p')
 const winScene = document.getElementById('win')
 const winText = document.getElementById('win-textW')
 const LoseText = document.getElementById('win-textL')
+let atk1Pos
+let atk2Pos
+let atk3Pos
+let manaChargePos
 
 if (window.innerHeight < 800) {
   console.log('changing width1')
@@ -27,26 +32,24 @@ if (window.innerHeight < 800) {
   atkDesc.style.width = '40%'
   hpBarBot.style.width = '30vh'
   hpBar.style.width = '30vh'
-  moveUp = () => {
-    atk2.style.top = '-35px'
-    atk3.style.top = '-71px'
-    manaCharge.style.top = '-107px'
-    atkDesc.style.left = '900px'
-  }
-} else if (window.innerHeight < 1000 && window.innerHeight > 800) {
-  console.log('changing width2')
-  imgBot.style.height = '50vh'
-  imgPlayer.style.height = '54vh'
-  atkDesc.style.width = '40%'
-  hpBarBot.style.width = '30vh'
-  hpBar.style.width = '30vh'
-  moveUp = () => {
-    atk2.style.top = '-49px'
-    atk3.style.top = '-98px'
-    manaCharge.style.top = '-141px'
-    atkDesc.style.left = '900px'
-  }
 }
+
+function getHeight() {
+  setTimeout(() => {
+    atk1Pos = atk1.getBoundingClientRect().y
+    atk2Pos = atk2.getBoundingClientRect().y
+    manaChargePos = manaCharge.getBoundingClientRect().y
+    atk3Pos = atk3.getBoundingClientRect().y
+
+    console.log(atk1Pos)
+    console.log(atk2Pos)
+    console.log(atk3Pos)
+
+    return atk1Pos, atk2Pos, atk3Pos, manaChargePos
+  }, 10)
+}
+getHeight()
+
 // Bot
 const sprite =
   'https://lh3.googleusercontent.com/pw/AM-JKLWYGADNiuvQbELnReegKLhksDAXI33PDmnuS7c-fr-qmQbC9Z0NtmHHviMU9hnJdu_SprmnmLmqLZxkwf7yZBCcK1JYdkLlFe336BAC_ojpZK0BBcMX3qDeutHjrrefK06V6Za8HHMZUeR02lh25fii=s625-no?authuser=0'
@@ -423,9 +426,12 @@ function stopSfx(useratk) {
   useratk.pause()
 }
 function moveUp() {
-  atk2.style.top = '-98px'
-  atk3.style.top = '-190px'
-  manaCharge.style.top = '-350px'
+  let pos1 = atk2Pos - atk1Pos
+  let pos2 = atk3Pos - atk1Pos
+  let pos3 = manaChargePos - atk1Pos
+  atk2.style.top = `-${pos1}px`
+  atk3.style.top = `-${pos2}px`
+  manaCharge.style.top = `-${pos3}px`
   atkDesc.style.left = '900px'
 }
 function moveDown() {

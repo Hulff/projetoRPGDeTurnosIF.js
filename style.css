@@ -152,7 +152,7 @@ meter {
   color: white;
   cursor: pointer;
   font-size: 2.4vh;
-  transition: top 0.8s;
+  transition: top 0.9s;
 }
 
 .atk:hover {
@@ -160,6 +160,8 @@ meter {
   background: rgb(55, 55, 55);
 }
 #atk-desc {
+  position: relative;
+  transition: left 1.3s;
   border-radius: 5px;
   height: 20vh;
   text-align: start;

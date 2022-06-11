@@ -20,13 +20,32 @@ const winScene = document.getElementById('win')
 const winText = document.getElementById('win-textW')
 const LoseText = document.getElementById('win-textL')
 
-if (window.innerWidth > 981) {
-  console.log('changing width')
+if (window.innerHeight < 800) {
+  console.log('changing width1')
   imgBot.style.height = '50vh'
   imgPlayer.style.height = '54vh'
   atkDesc.style.width = '40%'
   hpBarBot.style.width = '30vh'
   hpBar.style.width = '30vh'
+  moveUp = () => {
+    atk2.style.top = '-35px'
+    atk3.style.top = '-71px'
+    manaCharge.style.top = '-107px'
+    atkDesc.style.left = '900px'
+  }
+} else if (window.innerHeight < 1000 && window.innerHeight > 800) {
+  console.log('changing width2')
+  imgBot.style.height = '50vh'
+  imgPlayer.style.height = '54vh'
+  atkDesc.style.width = '40%'
+  hpBarBot.style.width = '30vh'
+  hpBar.style.width = '30vh'
+  moveUp = () => {
+    atk2.style.top = '-49px'
+    atk3.style.top = '-98px'
+    manaCharge.style.top = '-141px'
+    atkDesc.style.left = '900px'
+  }
 }
 // Bot
 const sprite =
@@ -404,13 +423,15 @@ function stopSfx(useratk) {
   useratk.pause()
 }
 function moveUp() {
-  atk2.style.top = '-35px'
-  atk3.style.top = '-71px'
-  manaCharge.style.top = '-107px'
+  atk2.style.top = '-98px'
+  atk3.style.top = '-190px'
+  manaCharge.style.top = '-350px'
+  atkDesc.style.left = '900px'
 }
 function moveDown() {
   atk2.style.top = '0px'
   atk3.style.top = '0px'
+  atkDesc.style.left = '0px'
   manaCharge.style.top = '0px'
 }
 
